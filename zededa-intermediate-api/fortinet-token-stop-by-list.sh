@@ -1,6 +1,6 @@
 #!/bin/sh
 
-serials_file="20251125-my-list.txt"
+serials_file="20260306-my-test-list.txt"
 cloud_file=cloud.txt
 token_file=token.txt
 
@@ -17,8 +17,8 @@ endpoint="api/v1/firewall/serial/stop"
 url="https://${CLOUD}/${endpoint}"
 
 
-echo "using API ${url}"  2>&1 | tee -a ${log_file}
 echo "using cloud url from ${cloud_file}"  2>&1 | tee -a ${log_file}
+echo "using API ${url}"  2>&1 | tee -a ${log_file}
 echo "using auth token from ${token_file}" 2>&1 | tee -a ${log_file}
 count=0
 
