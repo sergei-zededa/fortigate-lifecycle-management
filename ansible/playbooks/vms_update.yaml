@@ -1,0 +1,21 @@
+- name: Update VM
+  hosts: localhost
+  collections:
+    - fortinet.fortiflexvm
+  vars_files:
+    - env_vars.yaml
+  tasks:
+    - name: Update a Virtual Machine
+      fortinet.fortiflexvm.fortiflexvm_entitlements_update:
+        username: "{{ username }}"
+        password: "{{ password }}"
+        serialNumber: "FGVMMLTM23456789"
+        configId: 4818
+        #description: "Ansible - 20251111 - my description"
+        endDate: "2026-06-19T00:00:00"
+        status: "ACTIVE" # ACTIVE or STOPPED
+      register: result
+
+    - name: Display response
+      debug:
+        var: result.entitlements

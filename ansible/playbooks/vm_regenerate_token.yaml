@@ -1,0 +1,18 @@
+- name: Update VM
+  hosts: localhost
+  collections:
+    - fortinet.fortiflexvm
+  vars_files:
+    - env_vars.yaml
+  tasks:
+    - name: Regenerate token
+      fortinet.fortiflexvm.fortiflexvm_entitlements_vm_regenerate_token:
+        username: "{{ username }}"
+        password: "{{ password }}"
+        serialNumber: "FGVMMLTM23456789"
+        regenerate: true # If you set it as false, FortiFlexvm ansible collection will return an empty list.
+      register: result
+
+    - name: Display response
+      debug:
+        var: result.entitlements

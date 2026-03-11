@@ -1,0 +1,24 @@
+- name: Get point usage for VMs
+  hosts: localhost
+  collections:
+    - fortinet.fortiflexvm
+
+  tasks:
+
+    - name: Include variables from a file
+      include_vars:
+        file: env_vars.yaml
+
+    - name: Get VMs points
+      fortinet.fortiflexvm.fortiflexvm_vms_points_info:
+        username: "{{ username }}"
+        password: "{{ password }}"
+        configId: 4818
+        startDate: "2023-06-20T00:00:00"
+        endDate: "2026-06-19T00:00:00"
+      register: result
+
+    - name: Display response
+      debug:
+        var: result.vms
+

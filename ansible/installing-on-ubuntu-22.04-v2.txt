@@ -1,0 +1,27 @@
+By default Ubuntu-22.04 installs ansible 2.10.8, but fortiflex ansible collection ver2+ needs ansible 2.15+
+
+Installing latest Ansible on Ubuntu-22.04, and installing fortinet.fortiflexvm v2 collection:
+
+apt-add-repository ppa:ansible/ansible
+apt update
+apt install ansible
+
+ansible --version
+ansible [core 2.17.14]
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python3/dist-packages/ansible
+  ansible collection location = /root/.ansible/collections:/usr/share/ansible/collections
+  executable location = /usr/bin/ansible
+  python version = 3.10.12 (main, Jan  8 2026, 06:52:19) [GCC 11.4.0] (/usr/bin/python3)
+  jinja version = 3.0.3
+  libyaml = True
+
+ansible-galaxy collection install fortinet.fortiflexvm
+# (or maybe:  ansible-galaxy collection install fortinet.fortiflexvm --force )
+Starting galaxy collection install process
+Process install dependency map
+Starting collection install process
+Downloading https://galaxy.ansible.com/api/v3/plugin/ansible/content/published/collections/artifacts/fortinet-fortiflexvm-2.3.0.tar.gz to /root/.ansible/tmp/ansible-local-12070puecc0x/tmpjkee0q2l/fortinet-fortiflexvm-2.3.0-b3bx_1jj
+Installing 'fortinet.fortiflexvm:2.3.0' to '/root/.ansible/collections/ansible_collections/fortinet/fortiflexvm'
+fortinet.fortiflexvm:2.3.0 was installed successfully

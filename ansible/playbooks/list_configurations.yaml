@@ -1,0 +1,21 @@
+- name: Get list of Flex VM Configurations for a Program
+  hosts: localhost
+  collections:
+    - fortinet.fortiflexvm
+
+  tasks:
+
+    - name: Include variables from a file
+      include_vars:
+        file: env_vars.yaml
+
+    - name:  Get configs list
+      fortinet.fortiflexvm.fortiflexvm_configs_list_info:
+        username: "{{ username }}"
+        password: "{{ password }}"
+        programSerialNumber: "ELAVMS0000000845"
+      register: result
+
+    - name: Display response
+      debug:
+        var: result.configs

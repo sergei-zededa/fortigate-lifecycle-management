@@ -1,0 +1,25 @@
+- name: Create VMs
+  hosts: localhost
+  collections:
+    - fortinet.fortiflexvm
+
+  tasks:
+
+    - name: Include variables from a file
+      include_vars:
+        file: env_vars.yaml
+
+    - name: Create Virtual Machines
+      fortinet.fortiflexvm.fortiflexvm_vms_create:
+        username: "{{ username }}"
+        password: "{{ password }}"
+        configId: 4815
+        count: 1
+        description: "Ansible - 20250813 - my description for configid 4815"
+        endDate: "2026-06-18T23:59:59"
+        folderPath: "My Assets"
+      register: result
+
+    - name: Display response
+      debug:
+        var: result.vms

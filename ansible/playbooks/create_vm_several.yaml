@@ -1,0 +1,21 @@
+- name: Create VMs
+  hosts: localhost
+  collections:
+    - fortinet.fortiflexvm
+  vars_files:
+    - env_vars.yaml
+  tasks:
+    - name: Create Virtual Machines
+      fortinet.fortiflexvm.fortiflexvm_vms_create:
+        username: "{{ username }}"
+        password: "{{ password }}"
+        configId: 4818
+        count: 20
+        description: "Ansible - 20251202 - my description for several serials"
+        endDate: "2026-06-18T23:59:59"
+        folderPath: "My Assets"
+      register: result
+
+    - name: Display response
+      debug:
+        var: result.vms
