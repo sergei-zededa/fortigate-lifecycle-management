@@ -1,0 +1,4 @@
+# variables for list_entitlements_per_configuration.sh
+FORTIFLEX_API_PASSWORD=xyz123
+FORTIFLEX_PROGRAM_SN=ELAVMS0000000123
+FORTIFLEX_API_USER=abc123
