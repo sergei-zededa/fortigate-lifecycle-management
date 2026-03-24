@@ -8,7 +8,9 @@ import time
 import csv
 from datetime import datetime
 
+
 serialsfile = "serials.txt"
+
 tplfile     = "vms_update.yaml.tpl"
 ymlfile     = "vms_update.yaml"
 myplaybook  = "run_playbook.sh"
