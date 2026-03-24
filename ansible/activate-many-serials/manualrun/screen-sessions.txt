@@ -1,0 +1,13 @@
+
+activation of 1000 licenses takes ~2 hours
+makes sense to run in several sessions
+
+apt install screen
+
+screen -S ses1 -t ses1
+screen -S ses2 -t ses2
+screen -D -R ses1
+screen -ls
+
+detach: Ctrl-A d
+info: Ctrl-A i
