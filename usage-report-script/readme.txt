@@ -10,5 +10,8 @@ Possible string to daily run for cron:
 00 18 * * *  root  cd /fgt/automat/usage-report-script && /fgt/automat/usage-report-script/usage-report5.sh 2>&1 | tee -a /fgt/automat/usage-report-script/usage-report.sh.log
 
 
+Requirements:
 
+apt install zip
+pip3 install requests
 
