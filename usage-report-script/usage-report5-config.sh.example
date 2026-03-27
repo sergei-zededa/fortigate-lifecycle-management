@@ -1,0 +1,17 @@
+# variables for usage-report5.sh
+minimumsize=10000
+licenseslist=list_entitlements_per_configuration_new.txt
+licenseslistfolder=licenseslists
+reporttoday=report-today.txt
+WORKFOLDER="/root/vw/fortigate/automatization/usage-report-script"
+DOWEMAILSEND="Fri"
+TO="recepient1@example.com"
+CC="recepient2@example.com,recepient3@example.com"
+BCC="recepient4@example.com"
+FROM="reportrobot@example.com"
+ROBOTNAME="Reports Robot"
+SMTPSERVER="smtp.example.com"
+SMTPUSER="smtpuser"
+SMTPPASS="smtppassword1234567890"
+MESSIDDOMAIN="example.com"
+SMTPPORT=587
