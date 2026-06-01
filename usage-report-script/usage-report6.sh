@@ -6,7 +6,7 @@ echo "============================"
 
 #-----------------------------------------------------------
 #reading variables:
-VARFILE="./usage-report5-config.sh"
+VARFILE="./usage-report-config.sh"
 if [ ! -f "$VARFILE" ]; then
     echo "Config file $VARFILE missing. Exiting right away."
     exit 1
@@ -43,6 +43,7 @@ fi
 totallicenses=`cat ${licenseslist} | wc -l`
 activelicenses=`cat ${licenseslist} | grep '"ACTIVE"' | wc -l`
 stoppedlicenses=`cat ${licenseslist} | grep '"STOPPED"' | wc -l`
+pendinglicenses=`cat ${licenseslist} | grep '"PENDING"' | wc -l`
 
 cp ${licenseslist} licenseslist-${CURDATE}.txt
 zip -9 licenseslist-${CURDATE}.zip licenseslist-${CURDATE}.txt
@@ -54,6 +55,7 @@ echo "FortiFlex licenses counts by ${curdatetime}" > ${reporttoday}
 echo "Total licenses: ${totallicenses}"           >> ${reporttoday}
 echo "Activated licenses: ${activelicenses}"      >> ${reporttoday}
 echo "Stopped licenses: ${stoppedlicenses}"       >> ${reporttoday}
+echo "Pending licenses: ${pendinglicenses}"       >> ${reporttoday}
 
 cat ${reporttoday}
 
